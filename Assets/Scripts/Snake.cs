@@ -174,7 +174,7 @@ public class Snake : MonoBehaviour
         // First body part follows the head, others follow the last tail position
         if (snakeBodyParts.Count == 0)
         {
-            spawnPos = transform.position;
+            spawnPos = targetPos+ moveDir*gridSystemSingleton.GetCellSize;
         }
         else
         {
@@ -191,6 +191,7 @@ public class Snake : MonoBehaviour
     /// </summary>
     private void MoveBodyParts(Vector3 lastHeadPos)
     {
+        
         if (snakeBodyParts.Count > 0)
         {
             Vector3 prevPos = lastHeadPos;
